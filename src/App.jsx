@@ -79,7 +79,6 @@ function App() {
   // console.log(otherElem);
 
   const listCompleted = filteredElem.map((curFilteredElem) => {
-
     return (
       <li key={curFilteredElem.id}>
         <h5>{curFilteredElem.title}</h5>
@@ -89,13 +88,24 @@ function App() {
     )
   })
 
+  const listOther = otherElem.map((curOtherElem) => {
+    return (
+      <li key={curOtherElem.id}>
+        <h5>{curOtherElem.title}</h5>
+        <p>{curOtherElem.priority}</p>
+        <p>{curOtherElem.estimatedTime}</p>
+      </li>
+    )
+  })
+
   return (
     <>
       <h1>Task Manager</h1>
 
       <h3>Current Tasks (4)</h3>
+      <ul>{listOther}</ul>
 
-      <hr />
+      <hr/>
 
       <h3>Completed Tasks (6)</h3>
       <ul>{listCompleted}</ul>
