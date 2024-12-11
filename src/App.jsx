@@ -71,39 +71,34 @@ const tasks = [
   }
 ];
 
-const filteredElem = tasks.filter((curCompleted) => curCompleted.state === "completed");
-const otherElem = tasks.filter((curOther) => curOther.state != "completed");
-
-console.log(filteredElem);
-console.log(otherElem);
-
-
-
-
 function App() {
+  const filteredElem = tasks.filter(curCompleted => curCompleted.state === "completed");
+  const otherElem = tasks.filter(curOther => curOther.state != "completed");
+
+  // console.log(filteredElem);
+  // console.log(otherElem);
+
+  const listCompleted = filteredElem.map((curFilteredElem) => {
+
+    return (
+      <li key={curFilteredElem.id}>
+        <h5>{curFilteredElem.title}</h5>
+        <p>{curFilteredElem.priority}</p>
+        <p>{curFilteredElem.estimatedTime}</p>
+      </li>
+    )
+  })
 
   return (
     <>
-    <h1>Task Manager</h1>
+      <h1>Task Manager</h1>
 
-    <h3>Current Tasks (4)</h3>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+      <h3>Current Tasks (4)</h3>
 
-    <hr/>
-    <h3>Completed Tasks (6)</h3>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+      <hr />
+
+      <h3>Completed Tasks (6)</h3>
+      <ul>{listCompleted}</ul>
     </>
   )
 }
