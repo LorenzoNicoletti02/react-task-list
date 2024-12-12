@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+h1{
+    padding-top: 15px;
+    font-size: 25px;
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+.div{
+    max-width: 100%;
+    background-color: aquamarine;
+    height: 60px;
+}
+
+ul{
+    line-height: 1.8;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.padding{
+    padding-top: 20px;
+}
+

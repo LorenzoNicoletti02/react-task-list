@@ -73,6 +73,7 @@ const tasks = [
   }
 ];
 
+// Creo gli array dove andranno poi inseriti i due diversi valori principali
 function App() {
   const filteredElem = tasks.filter(curCompleted => curCompleted.state === "completed");
   const otherElem = tasks.filter(curOther => curOther.state != "completed");
@@ -102,15 +103,17 @@ function App() {
 
   return (
     <>
-      <h1>Task Manager</h1>
+    <div className="div">
+      <h1 className="container padding">Task Manager</h1>
 
-      <h3>Current Tasks (4)</h3>
-      <ul>{listOther}</ul>
+      <h3 className="container padding">Current Tasks (4)</h3>
+      <ul className="container padding">{listOther}</ul>
 
       <hr/>
 
-      <h3>Completed Tasks (6)</h3>
-      <ul>{listCompleted}</ul>
+      <h3 className="container padding">Completed Tasks (6)</h3>
+      <ul className="container padding">{listCompleted}</ul>
+    </div>
     </>
   )
 }
